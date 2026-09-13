@@ -1,33 +1,37 @@
 const layers = [
   {
-    role: "Clients",
-    title: "Outcomes, not ops noise",
-    body: "Each engagement maps to a client context. Dae keeps the relationship coherent while work fans out underneath.",
+    role: "You",
+    title: "One Digital Bae",
+    body: "Talk to Dae—not a pile of disconnected agents. Fun on the surface. Engineering mastery underneath.",
   },
   {
-    role: "Team leads",
-    title: "Grok bots per client",
-    body: "Dedicated team-lead bots own cadence, quality bar, and escalation—so every client feels staffed, not queued.",
+    role: "MIND infra",
+    title: "Tenants + multi-graph",
+    body: "Each bot gets a new tenant. Multi-graph keeps personality, lessons, and work aligned across the fleet—without context bleed.",
   },
   {
-    role: "Engineers",
-    title: "Grok Code terminals",
-    body: "One terminal per live project or ticket. Engineers execute; leads coordinate; Dae directs.",
+    role: "Your agents",
+    title: "Instantly effective",
+    body: "Whatever you connect inherits that tenant and those graphs—so it shows up ready, isolated, and coherent.",
   },
 ];
 
 export function TeamModel() {
   return (
-    <section id="team" className="border-t border-card-border/70 py-20 sm:py-28">
+    <section id="team" className="border-t border-card-border/80 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">Clients · leads · engineers</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            An org chart that actually scales
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">
+            You · MIND infra · agents
+          </p>
+          <h2 className="font-display mt-3 text-3xl font-medium tracking-tight text-foreground sm:text-5xl">
+            Isolated tenants.{" "}
+            <span className="italic text-accent">Shared coherence.</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-            Think boutique firm energy with machine leverage: clear roles, short feedback
-            loops, and no mystery about who owns the next mile.
+          <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base">
+            Digital Bae isn&apos;t another chatbot. It&apos;s the Director of Engineering
+            layer on MIND infrastructure—tenant-per-bot and multi-graph so a growing
+            agent team stays sharp instead of chaotic.
           </p>
         </div>
 
@@ -35,10 +39,10 @@ export function TeamModel() {
           {layers.map((layer) => (
             <article
               key={layer.role}
-              className="flex flex-col rounded-2xl border border-card-border bg-card p-6"
+              className="flex flex-col rounded-2xl border border-card-border bg-card p-6 transition hover:border-accent/35"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">{layer.role}</p>
-              <h3 className="mt-3 text-xl font-medium text-foreground">{layer.title}</h3>
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent">{layer.role}</p>
+              <h3 className="font-display mt-3 text-2xl font-medium text-foreground">{layer.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{layer.body}</p>
             </article>
           ))}

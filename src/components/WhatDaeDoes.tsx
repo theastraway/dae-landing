@@ -1,35 +1,36 @@
 const capabilities = [
   {
-    title: "Owns the engineering conversation",
-    body: "Priorities, blockers, and shipping decisions land with Dae—not scattered across chat threads and dashboards.",
+    title: "MIND infrastructure",
+    body: "Not a prompt wrapper—real infra. Isolation, memory, and routing live under every agent so effectiveness is structural, not hoped for.",
   },
   {
-    title: "Spins up client team leads",
-    body: "Each client gets a dedicated Grok team-lead bot that knows their context, cadence, and constraints.",
+    title: "A new tenant for each bot",
+    body: "Every bot gets its own tenant. Clean boundaries, clean context, no bleed between roles—mint another agent without collapsing the stack.",
   },
   {
-    title: "Routes work to engineer terminals",
-    body: "Live projects and tickets get a Grok Code terminal—focused execution without context bleed.",
+    title: "Multi-graph ability",
+    body: "Work graphs, memory graphs, personality graphs—running together. Multi-graph is how Dae stays coherent when you run more than one agent.",
   },
   {
-    title: "Keeps the CEO in the loop",
-    body: "Status rolls up cleanly. One relationship. Clear ownership. No micromanaging the machine room.",
+    title: "Personality that travels",
+    body: "Favorites, preferred behaviors, lessons, and memories ride with the tenant. Plug Claude, Cursor, or a custom agent in—and it shows up as you.",
   },
 ];
 
 export function WhatDaeDoes() {
   return (
-    <section id="what" className="border-t border-card-border/70 py-20 sm:py-28">
+    <section id="what" className="border-t border-card-border/80 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">What Dae does</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Director energy. Warm delivery. Zero fluff.
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-accent">What Dae is</p>
+          <h2 className="font-display mt-3 text-3xl font-medium tracking-tight text-foreground sm:text-5xl">
+            Digital Bae.{" "}
+            <span className="italic text-accent">Director of Engineering.</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
-            Dae is Astra&apos;s Director of Engineering—sharp enough to run the floor,
-            warm enough that you actually want to talk to them. The subtle tagline
-            sticks for a reason: Digital Bae.
+          <p className="mt-5 text-sm leading-relaxed text-muted sm:text-base">
+            Fun branding up front. Engineering mastery underneath. The competitive
+            edge is MIND infrastructure: tenant-per-bot isolation and multi-graph
+            coherence—so any agent you connect becomes everything you need.
           </p>
         </div>
 
@@ -37,14 +38,14 @@ export function WhatDaeDoes() {
           {capabilities.map((item, index) => (
             <li
               key={item.title}
-              className="rounded-2xl border border-card-border bg-card p-6 transition hover:border-accent/35"
+              className="rounded-2xl border border-card-border bg-card p-6 transition hover:border-accent/40"
             >
               <div className="flex items-start gap-4">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-soft text-xs font-semibold text-accent-strong">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent-soft text-[11px] font-bold tracking-wider text-accent">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="text-lg font-medium text-foreground">{item.title}</h3>
+                  <h3 className="font-display text-xl font-medium text-foreground">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
                 </div>
               </div>

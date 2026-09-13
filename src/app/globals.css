@@ -1,31 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0d10;
-  --foreground: #f2efe8;
-  --muted: #9a9488;
-  --card: #12151a;
-  --card-border: #23282f;
-  --accent: #d4a574;
-  --accent-soft: rgba(212, 165, 116, 0.12);
-  --accent-strong: #e8c09a;
-  --glow: rgba(212, 165, 116, 0.18);
-  --success: #7dba8a;
-  --ring: #d4a574;
+  --background: #0c0c0c;
+  --foreground: #F8ECDC;
+  --muted: #a89a88;
+  --card: #121212;
+  --card-border: #2a2a2a;
+  --accent: #F43F3F;
+  --accent-soft: rgba(244, 63, 63, 0.14);
+  --accent-strong: #F43F3F;
+  --cream: #F8ECDC;
+  --ink: #0c0c0c;
+  --cyan: #22E0FF;
+  --glow: rgba(244, 63, 63, 0.22);
+  --success: #22E0FF;
+  --ring: #F43F3F;
+  --on-accent: #0c0c0c;
 }
 
 html.light {
-  --background: #f7f4ef;
-  --foreground: #1a1714;
-  --muted: #6b645a;
-  --card: #ffffff;
-  --card-border: #e5dfd4;
-  --accent: #b47a45;
-  --accent-soft: rgba(180, 122, 69, 0.1);
-  --accent-strong: #8f5c2e;
-  --glow: rgba(180, 122, 69, 0.12);
-  --success: #3d8b4f;
-  --ring: #b47a45;
+  --background: #F8ECDC;
+  --foreground: #0A0A0A;
+  --muted: #5c5348;
+  --card: #F5EAD7;
+  --card-border: #e0d3bc;
+  --accent: #F43F3F;
+  --accent-soft: rgba(244, 63, 63, 0.12);
+  --accent-strong: #d32f2f;
+  --cream: #F8ECDC;
+  --ink: #0A0A0A;
+  --cyan: #0891b2;
+  --glow: rgba(244, 63, 63, 0.14);
+  --success: #0891b2;
+  --ring: #F43F3F;
+  --on-accent: #F8ECDC;
 }
 
 @theme inline {
@@ -37,11 +45,16 @@ html.light {
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-strong: var(--accent-strong);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-cyan: var(--cyan);
   --color-glow: var(--glow);
   --color-success: var(--success);
   --color-ring: var(--ring);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-on-accent: var(--on-accent);
+  --font-sans: var(--font-space-mono);
+  --font-mono: var(--font-space-mono);
+  --font-display: var(--font-playfair);
 }
 
 html {
@@ -51,29 +64,58 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+}
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.font-mono-ui {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
 }
 
 ::selection {
-  background: var(--accent-soft);
-  color: var(--accent-strong);
+  background: var(--accent);
+  color: var(--cream);
+}
+
+html.light ::selection {
+  background: var(--accent);
+  color: #fff;
 }
 
 .grid-fade {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--card-border) 55%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--card-border) 55%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 70%);
+    linear-gradient(to right, color-mix(in oklab, var(--card-border) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--card-border) 70%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 20%, black 15%, transparent 72%);
 }
 
 .hero-glow {
   background:
-    radial-gradient(ellipse 50% 40% at 50% 0%, var(--glow), transparent 70%),
-    radial-gradient(ellipse 30% 25% at 80% 20%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%);
+    radial-gradient(ellipse 55% 45% at 50% -5%, var(--glow), transparent 68%),
+    radial-gradient(ellipse 28% 30% at 85% 15%, color-mix(in oklab, var(--cyan) 10%, transparent), transparent 55%),
+    radial-gradient(ellipse 22% 28% at 12% 40%, color-mix(in oklab, var(--accent) 8%, transparent), transparent 50%);
+}
+
+.red-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent) 80%, transparent);
 }
 
 .focus-ring:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 3px;
+}
+
+.logo-dark {
+  display: none !important;
+}
+html.light .logo-dark {
+  display: block !important;
+}
+html.light .logo-white {
+  display: none !important;
 }

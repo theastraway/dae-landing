@@ -1,25 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Dae — Director of Engineering for Astra AI",
-  description:
-    "Dae is Astra AI's Director of Engineering (Digital Bae). Manages per-client Grok team-lead bots that run Grok Code engineer terminals—one per live project or ticket.",
+  title: "Dae — Digital Bae · Director of Engineering · MIND",
+  description: "Dae is Digital Bae on MIND infrastructure: a new tenant for each bot, multi-graph ability, and personality that travels—so any agent you plug in becomes highly effective.",
   openGraph: {
-    title: "Dae — Director of Engineering for Astra AI",
+    title: "Dae — Digital Bae · Director of Engineering · MIND",
     description:
-      "Sharp, warm, premium ops. CEO talks only to Dae. Client leads and engineer terminals do the rest.",
+      "MIND infrastructure. Tenant per bot. Multi-graph. Fun branding, engineering mastery—if it works for me, it'll work for you.",
     type: "website",
   },
 };
@@ -28,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${playfair.variable} ${spaceMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -38,7 +40,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
+      <body className="font-mono-ui min-h-full flex flex-col bg-background text-foreground">
+        {children}
+      </body>
     </html>
   );
 }

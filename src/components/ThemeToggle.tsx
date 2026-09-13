@@ -45,7 +45,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-full border border-card-border bg-card text-muted transition hover:border-accent/40 hover:text-foreground"
+      className="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-full border border-card-border bg-card text-muted transition hover:border-accent/45 hover:text-foreground"
     >
       {mounted ? (
         theme === "dark" ? (
